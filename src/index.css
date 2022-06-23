@@ -11,6 +11,9 @@ html {
 
 /* VARS */
 :root {
+  /* COLORS */
+  --body--color: #282c34;
+  --font-color: #fff;
   /* FONT SIZE */
   --font-base: 1.6rem;
   --font-small: 1.4rem;
@@ -46,4 +49,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
