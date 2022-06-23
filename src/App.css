@@ -6,3 +6,19 @@
   color: var(--font-color);
   animation: fadeIn 0.3s linear;
 }
+
+.container {
+  width: 100%;
+  max-width: 92rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
