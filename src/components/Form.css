@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em 0;
+}
+
+.form__input,
+.form__submit {
+  padding: 0.75em 1.5em;
+  border-radius: var(--radius);
+  font-weight: 600;
+  color: var(--font-color);
+  box-shadow: var(--shadow);
+  border: none;
+}
+
+.form__input {
+  outline: none;
+  background-color: var(--body--color-alt);
+}
+
+.form__submit {
+  background-color: #4737da;
+  cursor: pointer;
+}
