@@ -1,0 +1,25 @@
+.home {
+  height: 100vh;
+  display: flex;
+  padding-top: 3em;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.home__picture {
+  width: 14em;
+  margin-bottom: 1.125em;
+}
+
+.home__picture img {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.home__subtitle {
+  opacity: 0.85;
+  margin: 0;
+  margin-bottom: 1em;
+}
