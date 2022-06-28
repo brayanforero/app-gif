@@ -15,6 +15,7 @@ html {
   --body--color: hsl(220, 13%, 18%);
   --body--color-alt: hsl(220, 13%, 25%);
   --font-color: #fff;
+  --primary-color: hsl(246, 80%, 60%);
   /* FONT SIZE */
   --font-base: 1.6rem;
   --font-small: 1.4rem;

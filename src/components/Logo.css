@@ -1,0 +1,16 @@
+.Logo {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.Logo img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Logo--small {
+  width: 14rem;
+}

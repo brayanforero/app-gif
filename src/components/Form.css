@@ -20,6 +20,6 @@
 }
 
 .form__submit {
-  background-color: #4737da;
+  background-color: var(--primary-color);
   cursor: pointer;
 }
