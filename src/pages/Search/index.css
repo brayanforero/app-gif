@@ -1,11 +1,12 @@
 .Search {
-  padding: 3em 0;
+  padding: 3em 1em;
   display: flex;
   flex-direction: column;
 }
 
 .Search form {
   width: 50%;
+  max-width: 42rem;
   align-self: center;
 }
 
@@ -19,13 +20,14 @@
 
 .Search__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   gap: 2em 1em;
 }
 
 .Search .card {
   width: 100%;
-  min-height: 32rem;
+  min-height: 28rem;
   border-radius: 0.25em;
-  background-color: #383838;
+  background-color: var(--body--color-alt);
+  box-shadow: var(--shadow);
 }
