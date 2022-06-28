@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { Form, Logo } from '../../components'
 import './index.css'
 interface Props {
@@ -7,6 +8,9 @@ interface Props {
 function Search({ params }: Props) {
   return (
     <section className="Search">
+      <Link href="/" className="active">
+        Regresar
+      </Link>
       <div className="Search__interacions-search">
         <Logo size="small" />
         <Form />

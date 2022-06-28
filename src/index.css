@@ -63,6 +63,13 @@ img {
   height: auto;
 }
 
+a {
+  font-weight: 600;
+  font-size: 1.125em;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 button,
 input {
   font-size: 1.6rem;
