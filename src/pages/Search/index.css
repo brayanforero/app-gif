@@ -1,0 +1,31 @@
+.Search {
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.Search form {
+  width: 50%;
+  align-self: center;
+}
+
+.Search__show-result {
+  font-size: 1.5em;
+}
+
+.Search__show-result span {
+  font-weight: 600;
+}
+
+.Search__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  gap: 2em 1em;
+}
+
+.Search .card {
+  width: 100%;
+  min-height: 32rem;
+  border-radius: 0.25em;
+  background-color: #383838;
+}
