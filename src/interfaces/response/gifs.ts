@@ -1,10 +1,4 @@
-export interface GifsResponse {
-  data: Gif[]
-  pagination: Pagination
-  meta: MetaResponse
-}
-
-export interface Gif {
+export interface GifApi {
   type: string
   id: string
   url: string
@@ -22,10 +16,27 @@ export interface Gif {
   is_sticker: number
   import_datetime: Date
   trending_datetime: Date
-  images: Images
+  images: ImageApi
   user?: User
   analytics_response_payload: string
   analytics: Analytics
+}
+
+export interface CategoryApi {
+  name: string
+  name_encoded: string
+  subcategories: SubcategoryApi[]
+  gif: GifApi
+}
+
+export interface SubcategoryApi {
+  name: string
+  name_encoded: string
+}
+
+export interface TrendingSearchApi {
+  data: string[]
+  meta: MetaApi
 }
 
 export interface Analytics {
@@ -38,7 +49,7 @@ export interface Onclick {
   url: string
 }
 
-export interface Images {
+export interface ImageApi {
   original: FixedHeight
   downsized: The480_WStill
   downsized_large: The480_WStill
@@ -116,7 +127,7 @@ export interface User {
   is_verified: boolean
 }
 
-export interface MetaResponse {
+export interface MetaApi {
   status: number
   msg: string
   response_id: string
@@ -126,4 +137,10 @@ export interface Pagination {
   total_count: number
   count: number
   offset: number
+}
+
+export interface GifsResponse {
+  data: GifApi[]
+  pagination: Pagination
+  meta: MetaApi
 }
