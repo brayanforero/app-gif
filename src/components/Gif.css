@@ -1,0 +1,33 @@
+.Gif {
+  position: relative;
+  width: 100%;
+  min-height: 28rem;
+  max-height: 30rem;
+  border-radius: 0.25em;
+  background-color: var(--body--color-alt);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font-size: 1.125em;
+}
+
+.Gif img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Gif__name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1.25em 1em;
+  margin: 0;
+  font-weight: 600;
+
+  white-space: nowrap;
+  background-color: var(--primary-color);
+  opacity: 0.85;
+}
