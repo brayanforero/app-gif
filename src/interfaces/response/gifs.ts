@@ -144,3 +144,9 @@ export interface GifsResponse {
   pagination: Pagination
   meta: MetaApi
 }
+
+export interface SingleGifResponse {
+  data: GifApi
+  pagination: Pagination
+  meta: MetaApi
+}
