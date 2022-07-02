@@ -1,4 +1,4 @@
-.home {
+.Home {
   height: 100vh;
   display: flex;
   padding-top: 3em;
@@ -7,19 +7,23 @@
   /* justify-content: center; */
 }
 
-.home__picture {
+.Home__picture {
   width: 14em;
   margin-bottom: 1.125em;
 }
 
-.home__picture img {
+.Home__picture img {
   display: block;
   margin: 0;
   width: 100%;
 }
 
-.home__subtitle {
+.Home__subtitle {
   opacity: 0.85;
   margin: 0;
   margin-bottom: 1em;
+}
+
+.Home form {
+  margin-bottom: 2em;
 }

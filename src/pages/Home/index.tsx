@@ -1,12 +1,13 @@
 import './index.css'
 
-import { Form, Logo } from '../../components'
+import { Form, Grid, Logo } from '../../components'
 function Home() {
   return (
-    <section className="home">
+    <section className="Home">
       <Logo />
-      <p className="home__subtitle">Explore a world of gifs</p>
+      <p className="Home__subtitle">Explore a world of gifs</p>
       <Form />
+      <Grid name="Last Search" />
     </section>
   )
 }
