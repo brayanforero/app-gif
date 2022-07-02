@@ -21,17 +21,3 @@
 .Search__show-result span {
   font-weight: 600;
 }
-
-.Search__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: 2em 1em;
-}
-
-.Search .card {
-  width: 100%;
-  min-height: 28rem;
-  border-radius: 0.25em;
-  background-color: var(--body--color-alt);
-  box-shadow: var(--shadow);
-}
