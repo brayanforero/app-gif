@@ -22,8 +22,13 @@ function Home() {
       <Grid name="Categories">
         <>
           {categories?.map(c => (
-            <div className="Gif">
-              <img className="Gif__image" src={c.image} alt={c.name} />
+            <div className="Gif" key={c.name}>
+              <img
+                loading="lazy"
+                className="Gif__image"
+                src={c.image}
+                alt={c.name}
+              />
               <p className="Gif__name">{c.name}</p>
             </div>
           ))}
