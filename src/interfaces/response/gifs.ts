@@ -150,3 +150,9 @@ export interface SingleGifResponse {
   pagination: Pagination
   meta: MetaApi
 }
+
+export interface CategoriesResponse {
+  data: CategoryApi[]
+  pagination: Pagination
+  meta: MetaApi
+}

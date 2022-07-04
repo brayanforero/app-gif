@@ -1,10 +1,11 @@
 import './index.css'
 
 import { Form, Grid, Logo } from '../../components'
-import { useTrendingSearches } from '../../hooks'
+import { useCategories, useTrendingSearches } from '../../hooks'
 import { Link } from 'wouter'
 function Home() {
-  const { loading, error, terms } = useTrendingSearches()
+  const { terms } = useTrendingSearches()
+  const { categories } = useCategories()
   return (
     <section className="Home">
       <Logo />
@@ -17,7 +18,17 @@ function Home() {
           </Link>
         ))}
       </div>
-      <Grid name="Last Search" />
+
+      <Grid name="Categories">
+        <>
+          {categories?.map(c => (
+            <div className="Gif">
+              <img className="Gif__image" src={c.image} alt={c.name} />
+              <p className="Gif__name">{c.name}</p>
+            </div>
+          ))}
+        </>
+      </Grid>
     </section>
   )
 }
