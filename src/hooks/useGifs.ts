@@ -30,7 +30,7 @@ function useSingleGif(keyword: string) {
 
         console.log(gifsFormated)
 
-        setGifs(prevState => prevState.concat(gifsFormated))
+        setGifs(gifsFormated)
       })
       .catch(_err => {
         setError('Falien in fecth gifs')
