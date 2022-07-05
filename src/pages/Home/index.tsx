@@ -29,7 +29,9 @@ function Home() {
                 src={c.image}
                 alt={c.name}
               />
-              <p className="Gif__name">{c.name}</p>
+              <Link to={`/search/${c.name}`} className="Gif__name">
+                {c.name}
+              </Link>
             </div>
           ))}
         </>

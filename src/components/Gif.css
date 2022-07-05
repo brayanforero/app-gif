@@ -22,11 +22,12 @@
   position: absolute;
   left: 0;
   bottom: 0;
+  display: block;
   width: 100%;
   padding: 1.25em 1em;
   margin: 0;
   font-weight: 600;
-
+  color: var(--white);
   white-space: nowrap;
   background-color: var(--primary-color);
   opacity: 0.85;
