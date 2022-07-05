@@ -1,11 +1,14 @@
 import { Link } from 'wouter'
-import { Form, Logo } from '../../components'
+import { Form, Grid, Logo } from '../../components'
+import { useGifs } from './../../hooks'
 import './index.css'
 interface Props {
   params: { keyword: string }
 }
 
 function Search({ params }: Props) {
+  const { gifs, loading, error } = useGifs(params.keyword)
+
   return (
     <section className="Search">
       <Link href="/" className="active">
@@ -19,16 +22,8 @@ function Search({ params }: Props) {
         Your results of: <span>{decodeURI(params.keyword)}</span>
       </p>
 
-      <div className="Search__grid">
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-      </div>
+      {loading && <h6>Loading...</h6>}
+      <Grid items={gifs} />
     </section>
   )
 }
