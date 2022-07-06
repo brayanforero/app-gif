@@ -13,6 +13,16 @@
   padding: 0 1em;
 }
 
+.alert {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 0.315em;
+  color: var(--error-color);
+  font-weight: 600;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     margin-left: auto;
