@@ -11,8 +11,4 @@ export const getGifByKeyword = (
   )
     .then(respose => respose.json())
     .then(data => data)
-    .catch(err => {
-      console.error(err)
-      return null
-    })
 }
