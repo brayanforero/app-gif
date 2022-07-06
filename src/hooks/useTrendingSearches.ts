@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { TrendingSearchApi } from '../interfaces/response/gifs'
 import { getTrendingSearches } from '../services/trending'
 
 function useTrendingSearches() {
@@ -8,8 +7,8 @@ function useTrendingSearches() {
   const [terms, setTerms] = useState<string[]>([])
 
   useEffect(() => {
+    setError(null)
     setLoading(true)
-
     getTrendingSearches()
       .then(data => {
         if (data) setTerms(data.data)
