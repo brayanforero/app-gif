@@ -4,6 +4,7 @@ interface Props {
   dataLength: number
   hasMore?: boolean
   loader?: ReactNode
+  isLoading: boolean
   handlerEndSection: CallableFunction
   children: ReactNode
   margin?: number
@@ -12,6 +13,7 @@ function InfiniteScroll({
   dataLength,
   hasMore = false,
   loader = <h5>Loading...</h5>,
+  isLoading,
   handlerEndSection,
   margin = 20,
   children,
@@ -36,15 +38,26 @@ function InfiniteScroll({
     o: IntersectionObserver
   ) => {
     const [target] = e
-    if (target.isIntersecting && prevlength > 0 && hasMore) handlerEndSection()
+    if (target.isIntersecting) handlerEndSection()
+    console.log(prevlength, dataLength)
+    if (target.isIntersecting) console.log('more data')
   }
   return (
-    <>
+    <div style={{ minHeight: '90vh', position: 'relative' }}>
       {children}
 
-      {hasMore && loader}
-      <div ref={endRef} style={{ padding: '.5em .75em' }}></div>
-    </>
+      {hasMore && isLoading && loader}
+      <div
+        ref={endRef}
+        style={{
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          width: '100%',
+          padding: '1em',
+        }}
+      ></div>
+    </div>
   )
 }
 

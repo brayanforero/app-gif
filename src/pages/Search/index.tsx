@@ -33,6 +33,7 @@ function Search({ params }: Props) {
         hasMore={pages > page}
         handlerEndSection={handlerNextPage}
         margin={68}
+        isLoading={loading}
       >
         <Grid items={gifs} />
       </InfiniteScroll>

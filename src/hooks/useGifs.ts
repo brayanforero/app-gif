@@ -11,7 +11,11 @@ function useSingleGif(keyword: string) {
   const totalPages = useRef(1)
 
   useEffect(() => {
-    console.log('fetch')
+    setPage(1)
+    setGifs([])
+  }, [keyword])
+
+  useEffect(() => {
     setLoading(true)
     const offset = page === 1 ? 0 : page
     getGifByKeyword(keyword, offset)
@@ -34,14 +38,14 @@ function useSingleGif(keyword: string) {
           }
         })
 
-        if (page === 0) setGifs(gifsFormated)
-        else setGifs(prev => prev.concat(gifsFormated))
+        if (page > 1) setGifs(prev => prev.concat(gifsFormated))
+        else setGifs(gifsFormated)
       })
       .catch(_err => {
         setError('Falien in fecth gifs')
       })
       .finally(() => setLoading(false))
-  }, [page, keyword])
+  }, [page])
 
   useEffect(() => {
     setPage(1)
