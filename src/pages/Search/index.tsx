@@ -2,6 +2,7 @@ import debounce from 'just-debounce-it'
 import { useCallback } from 'react'
 import { Link } from 'wouter'
 import { Form, Grid, Logo } from '../../components'
+import InfiniteScroll from '../../components/InfiniteScroll'
 import { useGifs } from './../../hooks'
 import './index.css'
 interface Props {
@@ -27,16 +28,14 @@ function Search({ params }: Props) {
       <p className="Search__show-result">
         Your results of: <span>{decodeURI(params.keyword)}</span>
       </p>
-
-      {loading && <h6>Loading...</h6>}
-      <Grid items={gifs} />
-
-      <span>
-        Page {page} of {pages}
-      </span>
-      <button disabled={loading} onClick={handlerNextPage}>
-        Nex Page
-      </button>
+      <InfiniteScroll
+        dataLength={gifs.length}
+        hasMore={pages > page}
+        handlerEndSection={handlerNextPage}
+        margin={68}
+      >
+        <Grid items={gifs} />
+      </InfiniteScroll>
     </section>
   )
 }
