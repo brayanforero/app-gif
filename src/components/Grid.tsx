@@ -1,4 +1,3 @@
-import Category from '../interfaces/app/categories'
 import GifModel from '../interfaces/app/gif'
 import Gif from './Gif'
 import './Grid.css'
@@ -14,8 +13,8 @@ function Grid({ items = [], name, children }: Props) {
     return (
       <div className="Grid">
         {name && <p className="Grid__name">{name}</p>}
-        {items?.map(g => (
-          <Gif key={g.id} data={g} />
+        {items?.map((g, i) => (
+          <Gif key={`${g.id}-${i + 1}}`} data={g} />
         ))}
       </div>
     )
