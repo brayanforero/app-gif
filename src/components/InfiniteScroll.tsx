@@ -10,7 +10,7 @@ interface Props {
   margin?: number
 }
 function InfiniteScroll({
-  dataLength,
+  dataLength = 0,
   hasMore = false,
   loader = <h5>Loading...</h5>,
   isLoading,
@@ -18,10 +18,10 @@ function InfiniteScroll({
   margin = 20,
   children,
 }: Props) {
-  const [prevlength, setPrevlength] = useState(0)
   const endRef = useRef<HTMLDivElement | null>(null)
+  const countRef = useRef(0)
+
   useEffect(() => {
-    setPrevlength(dataLength)
     const observer = new IntersectionObserver(handlerObserver, {
       rootMargin: `${margin}px`,
     })
@@ -32,15 +32,18 @@ function InfiniteScroll({
       observer.disconnect()
     }
   }, [])
+  useEffect(() => {
+    countRef.current++
+  }, [dataLength])
 
   const handlerObserver = (
     e: IntersectionObserverEntry[],
     o: IntersectionObserver
   ) => {
     const [target] = e
+
+    if (countRef.current === 0) return
     if (target.isIntersecting) handlerEndSection()
-    console.log(prevlength, dataLength)
-    if (target.isIntersecting) console.log('more data')
   }
   return (
     <div style={{ minHeight: '90vh', position: 'relative' }}>
