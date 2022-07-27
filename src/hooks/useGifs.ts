@@ -49,7 +49,6 @@ function useSingleGif(keyword: string) {
 
   useEffect(() => {
     setPage(1)
-    setGifs([])
   }, [keyword])
 
   return {

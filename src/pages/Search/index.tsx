@@ -10,7 +10,7 @@ interface Props {
 }
 
 function Search({ params }: Props) {
-  const { gifs, loading, error, page, pages, setPage } = useGifs(params.keyword)
+  const { gifs, loading, page, pages, setPage } = useGifs(params.keyword)
 
   const handlerNextPage = useCallback(
     debounce(() => setPage(prev => prev + 1), 800),
