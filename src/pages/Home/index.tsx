@@ -41,7 +41,7 @@ function Home() {
             {categories?.map(c => (
               <div className="Gif" key={c.name}>
                 <img
-                  loading="lazy"
+                  decoding="async"
                   className="Gif__image"
                   src={c.image}
                   alt={c.name}
