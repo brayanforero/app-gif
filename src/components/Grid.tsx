@@ -1,6 +1,8 @@
+import { lazy, Suspense } from 'react'
 import GifModel from '../interfaces/app/gif'
-import Gif from './Gif'
+
 import './Grid.css'
+import Card from './placeholders/Card'
 interface Props {
   items?: GifModel[]
 
@@ -8,13 +10,17 @@ interface Props {
   children?: JSX.Element
 }
 
+const Gif = lazy(() => import('./Gif'))
+
 function Grid({ items = [], name, children }: Props) {
   if (!children)
     return (
       <div className="Grid">
         {name && <p className="Grid__name">{name}</p>}
         {items?.map((g, i) => (
-          <Gif key={`${g.id}-${i + 1}}`} data={g} />
+          <Suspense fallback={<Card />}>
+            <Gif key={`${g.id}-${i + 1}}`} data={g} />
+          </Suspense>
         ))}
       </div>
     )

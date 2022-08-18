@@ -11,6 +11,7 @@ function Gif({ data, type = 'normal' }: Props) {
     <div className="Gif">
       <img
         className="Gif__image"
+        decoding="async"
         loading="lazy"
         src={type === 'normal' ? data.image.normal : data.image.hd}
         alt={data.name}
