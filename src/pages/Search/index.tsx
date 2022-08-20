@@ -1,5 +1,5 @@
+import { useCallback, useEffect } from 'react'
 import debounce from 'just-debounce-it'
-import { useCallback } from 'react'
 import { Link } from 'wouter'
 import { Form, Grid, Logo } from '../../components'
 import InfiniteScroll from '../../components/InfiniteScroll'
@@ -12,6 +12,9 @@ interface Props {
 function Search({ params }: Props) {
   const { gifs, loading, page, pages, setPage } = useGifs(params.keyword)
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const handlerNextPage = useCallback(
     debounce(() => setPage(prev => prev + 1), 800),
     []
