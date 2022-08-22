@@ -5,6 +5,7 @@ import { Form, Grid, Logo } from '../../components'
 import InfiniteScroll from '../../components/InfiniteScroll'
 import { useGifs } from './../../hooks'
 import './index.css'
+import { BallTriangle } from 'react-loader-spinner'
 interface Props {
   params: { keyword: string }
 }
@@ -35,8 +36,9 @@ function Search({ params }: Props) {
         dataLength={gifs.length}
         hasMore={pages > page}
         handlerEndSection={handlerNextPage}
-        margin={68}
+        margin={0}
         isLoading={loading}
+        loader={<BallTriangle color="#5747eb" height={80} width={80} />}
       >
         <Grid items={gifs} />
       </InfiniteScroll>
