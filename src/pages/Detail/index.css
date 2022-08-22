@@ -15,6 +15,5 @@
 
 .Detail__item img {
   display: block;
-  object-fit: cover;
-  max-height: 80vh;
+  max-height: 90vh;
 }

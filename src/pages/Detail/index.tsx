@@ -1,7 +1,7 @@
-import { Link } from 'wouter'
 import useSingleGif from '../../hooks/useSingleGif'
 import { BallTriangle } from 'react-loader-spinner'
 import './index.css'
+
 interface Props {
   params: { id: string }
 }
@@ -9,11 +9,15 @@ interface Props {
 function Detail({ params }: Props) {
   const { gif, loading, error } = useSingleGif(params.id)
 
+  const handleReturn = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    window.history.back()
+  }
   return (
     <main className="Detail">
-      <Link href="/" className="active">
+      <a href="#" onClick={handleReturn} className="active">
         Regresar
-      </Link>
+      </a>
 
       {error && <span className="alert">{error}</span>}
       {loading && <BallTriangle color="#5747eb" height={80} width={80} />}
