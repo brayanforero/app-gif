@@ -1,7 +1,11 @@
 {
   "name": "app-gif",
+  "description": "A project with education goals",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Brayan Forero <bforero.enginner@gmail>",
+  "repository": "https://github.com/brayanforero/app-gif.git",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
