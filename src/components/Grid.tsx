@@ -18,8 +18,8 @@ function Grid({ items = [], name, children }: Props) {
       <div className="Grid">
         {name && <p className="Grid__name">{name}</p>}
         {items?.map((g, i) => (
-          <Suspense fallback={<Card />}>
-            <Gif key={`${g.id}-${i + 1}}`} data={g} />
+          <Suspense key={`${g.id}-${i + 1}}`} fallback={<Card />}>
+            <Gif data={g} />
           </Suspense>
         ))}
       </div>
