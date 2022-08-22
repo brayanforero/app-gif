@@ -5,6 +5,8 @@ import { useCategories, useTrendingSearches } from '../../hooks'
 import Lines from '../../components/placeholders/Lines'
 import { Link } from 'wouter'
 import Card from '../../components/placeholders/Card'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 function Home() {
   const {
@@ -38,12 +40,13 @@ function Home() {
           <>
             {categories?.map(c => (
               <div className="Gif" key={c.name}>
-                <img
-                  loading="lazy"
+                <LazyLoadImage
                   decoding="async"
-                  className="Gif__image"
+                  width="100%"
+                  height="100%"
                   src={c.image}
                   alt={c.name}
+                  effect="blur"
                 />
                 <Link to={`/search/${c.name}`} className="Gif__name">
                   {c.name}
