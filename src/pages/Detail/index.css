@@ -1,0 +1,20 @@
+.Detail {
+  padding: 1.25em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.Detail__item {
+  border-radius: 0.25em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1em;
+}
+
+.Detail__item img {
+  display: block;
+  object-fit: cover;
+  max-height: 80vh;
+}

@@ -4,6 +4,7 @@ import GifModel from '../interfaces/app/gif'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import './Gif.css'
+import { Link } from 'wouter'
 interface Props {
   data: GifModel
   type?: 'hd' | 'normal'
@@ -21,7 +22,9 @@ function Gif({ data, type = 'normal' }: Props) {
         width="100%"
         height="100%"
       />
-      <p className="Gif__name">{data.name || 'Title Unavaliable'}</p>
+      <Link to={`/g/${data.id}`} className="Gif__name">
+        {data.name || 'Title Unavaliable'}
+      </Link>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { Container } from './layouts'
 
 const Home = lazy(() => import('./pages/Home'))
 const Search = lazy(() => import('./pages/Search'))
+const Detail = lazy(() => import('./pages/Detail'))
 function App() {
   return (
     <Container>
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/search/:keyword" component={Search} />
+          <Route path="/g/:id" component={Detail} />
           <Route>
             <h1>Oops, are you lost?</h1>
           </Route>

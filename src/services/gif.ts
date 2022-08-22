@@ -14,3 +14,9 @@ export const getGifByKeyword = (
     .then(respose => respose.json())
     .then(data => data)
 }
+
+export const getGifByID = (id: string): Promise<GifsResponse> => {
+  return fetch(`${API_URL}gifs?api_key=${API_KEY}&ids=${id}`)
+    .then(respose => respose.json())
+    .then(data => data)
+}
