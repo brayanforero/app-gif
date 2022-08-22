@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import Gif from '../interfaces/app/gif'
 import { getGifByKeyword } from '../services/gif'
 
-function useSingleGif(keyword: string) {
+function useGifs(keyword: string) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [gifs, setGifs] = useState<Gif[]>([])
@@ -61,4 +61,4 @@ function useSingleGif(keyword: string) {
   }
 }
 
-export default useSingleGif
+export default useGifs
