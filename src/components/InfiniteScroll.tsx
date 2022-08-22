@@ -1,5 +1,24 @@
 import { ReactNode, useEffect, useRef } from 'react'
 
+interface LoaderProps {
+  children: ReactNode
+  show: boolean
+}
+
+export const LoaderContainer = ({ children, show = false }: LoaderProps) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {show && children}
+    </div>
+  )
+}
+
 interface Props {
   dataLength: number
   hasMore?: boolean
@@ -42,14 +61,13 @@ function InfiniteScroll({
   ) => {
     const [target] = e
 
-    if (countRef.current === 0) return
-    if (target.isIntersecting) handlerEndSection()
+    if (target.isIntersecting && countRef.current > 0) handlerEndSection()
   }
   return (
     <div style={{ minHeight: '90vh', position: 'relative' }}>
       {children}
 
-      {hasMore && isLoading && loader}
+      <LoaderContainer show={hasMore && isLoading}>{loader}</LoaderContainer>
       <div
         ref={endRef}
         style={{
