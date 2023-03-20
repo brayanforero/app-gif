@@ -1,19 +1,32 @@
-import { Link } from 'wouter'
+import useTrendingSearches from "@hooks/useTrendingSearches";
+import { Link } from "wouter";
+import Lines from "./placeholders/Lines";
 
-interface Props {
-  terms: string[]
+// TODO: Use the hook useTrending and handle erros and this file
+
+function TrendingTerms() {
+  const { terms, loading, error } = useTrendingSearches();
+
+  if (loading) return <Lines />;
+
+  return (
+    <section className="Home__searches">
+      {!error && <TermsList terms={terms} />}
+      {error && <span className="alert">{error}</span>}
+    </section>
+  );
 }
 
-function TrendingTerms({ terms }: Props) {
+function TermsList({ terms }: { terms: string[] }) {
   return (
-    <div className="Home__searches">
-      {terms.map(t => (
+    <>
+      {terms.map((t) => (
         <Link key={t} href={`/search/${t}`} className="active">
           {t}
         </Link>
       ))}
-    </div>
-  )
+    </>
+  );
 }
 
-export default TrendingTerms
+export default TrendingTerms;
