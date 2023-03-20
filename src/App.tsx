@@ -1,6 +1,6 @@
 import AppRouter from "@components/router/AppRouter";
 import { Container } from "./layouts";
-
+import "./App.css";
 function App() {
   return (
     <main>
