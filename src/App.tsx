@@ -3,11 +3,11 @@ import { Container } from "./layouts";
 
 function App() {
   return (
-    <Container>
-      <main>
+    <main>
+      <Container>
         <AppRouter />
-      </main>
-    </Container>
+      </Container>
+    </main>
   );
 }
 
