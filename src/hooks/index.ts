@@ -1,5 +1,5 @@
-import useTrendingSearches from './useTrendingSearches'
-import useCategories from './useCategories'
-import useGifs from './useGifs'
-
-export { useTrendingSearches, useCategories, useGifs }
+export { default as useCategories } from "./useCategories";
+export { default as useGifs } from "./useGifs";
+export { default as useObserver } from "./useObserver";
+export { default as useSingleGif } from "./useSingleGif";
+export { default as useTrendingSearches } from "./useTrendingSearches";
