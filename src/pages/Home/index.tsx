@@ -4,8 +4,12 @@ import { HomeFeed } from "@components/common/home";
 function Home() {
   return (
     <>
-      <HomeFeed />
-      <Categories />
+      <div className="section">
+        <HomeFeed />
+      </div>
+      <div className="section">
+        <Categories />
+      </div>
     </>
   );
 }

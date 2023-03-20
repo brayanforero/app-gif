@@ -4,7 +4,7 @@ import TrendingTerms from "@components/TrendingTerms";
 import "./index.css";
 function HomeFeed() {
   return (
-    <section className="Home section">
+    <section className="Home">
       <Logo size="small" />
       <p className="Home__subtitle gradient-purple">Explore a world of gifs</p>
       <Form />
