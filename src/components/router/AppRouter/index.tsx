@@ -1,4 +1,5 @@
 import Page from "@components/shared/placeholders/Page";
+import NotFound from "@pages/404";
 import { Suspense, lazy } from "react";
 import { Switch, Route } from "wouter";
 
@@ -15,7 +16,7 @@ function AppRouter() {
           <Route path="/search/:keyword" component={Search} />
           <Route path="/g/:id" component={Detail} />
           <Route>
-            <h1>Oops, are you lost?</h1>
+            <NotFound />
           </Route>
         </Switch>
       </Suspense>

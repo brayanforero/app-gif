@@ -1,0 +1,11 @@
+.Notfound {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.Notfound__title {
+  font-size: 3em;
+}
