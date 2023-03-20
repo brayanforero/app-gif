@@ -48,6 +48,13 @@ body {
   background-color: var(--body--color);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
