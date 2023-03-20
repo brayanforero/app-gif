@@ -1,6 +1,6 @@
 import useTrendingSearches from "@hooks/useTrendingSearches";
 import { Link } from "wouter";
-import Lines from "./placeholders/Lines";
+import { Lines } from "./shared";
 
 // TODO: Use the hook useTrending and handle erros and this file
 

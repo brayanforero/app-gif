@@ -1,16 +1,16 @@
-import { lazy, Suspense } from 'react'
-import GifModel from '../interfaces/app/gif'
+import { lazy, Suspense } from "react";
+import GifModel from "../interfaces/app/gif";
 
-import './Grid.css'
-import Card from './placeholders/Card'
+import "./Grid.css";
+import Card from "./shared/placeholders/Card";
 interface Props {
-  items?: GifModel[]
+  items?: GifModel[];
 
-  name?: string
-  children?: JSX.Element
+  name?: string;
+  children?: JSX.Element;
 }
 
-const Gif = lazy(() => import('./Gif'))
+const Gif = lazy(() => import("./Gif"));
 
 function Grid({ items = [], name, children }: Props) {
   if (!children)
@@ -23,14 +23,14 @@ function Grid({ items = [], name, children }: Props) {
           </Suspense>
         ))}
       </div>
-    )
+    );
 
   return (
     <article className="Grid">
       {name && <p className="Grid__name">{name}</p>}
       {children}
     </article>
-  )
+  );
 }
 
-export default Grid
+export default Grid;

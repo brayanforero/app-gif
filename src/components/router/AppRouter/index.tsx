@@ -1,4 +1,4 @@
-import Page from "@components/placeholders/Page";
+import Page from "@components/shared/placeholders/Page";
 import { Suspense, lazy } from "react";
 import { Switch, Route } from "wouter";
 

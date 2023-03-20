@@ -1,5 +1,5 @@
-import { Logo } from "@components/shared";
-import Form from "@components/Form";
+import { Form, Logo } from "@components/shared";
+
 import TrendingTerms from "@components/TrendingTerms";
 import "./index.css";
 

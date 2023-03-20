@@ -1,5 +1,4 @@
-import { Categories } from "@components/common/categories";
-import { HomeFeed } from "@components/common/home";
+import { HomeFeed, Categories } from "@components/common";
 
 function Home() {
   return (
