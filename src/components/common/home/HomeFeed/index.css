@@ -1,8 +1,6 @@
 .Home {
   height: 100vh;
   display: flex;
-  padding-top: 2em;
-  padding-bottom: 1em;
   flex-direction: column;
   align-items: center;
   color: white;
