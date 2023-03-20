@@ -14,6 +14,19 @@
   border: none;
 }
 
+@media screen and (min-width: 768px) {
+  .form__input,
+  .form__submit {
+    padding: 0.85em 1.5em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .form__input,
+  .form__submit {
+    padding: 1em 1.75em;
+  }
+}
+
 .form__input {
   outline: none;
   background-color: var(--body--color-alt);
