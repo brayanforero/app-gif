@@ -1,7 +1,8 @@
+import { Logo } from "@components/shared";
 import Form from "@components/Form";
-import Logo from "@components/Logo";
 import TrendingTerms from "@components/TrendingTerms";
 import "./index.css";
+
 function HomeFeed() {
   return (
     <section className="Home">
