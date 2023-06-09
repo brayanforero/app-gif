@@ -1,30 +1,21 @@
 import { useEffect, useRef } from "react";
 
 interface Props extends IntersectionObserverInit {
-  handler: () => void;
-  stopWatching: boolean;
+  callback: IntersectionObserverCallback;
 }
 
-function useObserver({ handler, stopWatching, ...restOfProps }: Props) {
+function useObserver({ callback, ...options }: Props) {
   const elementRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     const { current: ref } = elementRef;
     if (!ref) return;
-    const observer = new IntersectionObserver((entries) => {
-      const [element] = entries;
-      const { isIntersecting } = element;
-
-      if (!isIntersecting || stopWatching) return;
-
-      handler();
-    }, restOfProps);
-
+    const observer = new IntersectionObserver(callback, options);
     observer.observe(ref);
     return () => {
       observer.disconnect();
     };
-  }, []);
+  });
   return {
     elementRef,
   };
