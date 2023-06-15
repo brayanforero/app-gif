@@ -1,4 +1,3 @@
 .Categories {
-  height: 100vh;
-  background: tomato;
+  min-height: 100vh;
 }
