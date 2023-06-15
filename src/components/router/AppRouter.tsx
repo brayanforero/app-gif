@@ -1,9 +1,9 @@
+import { Suspense, lazy } from "react";
 import Page from "@components/shared/placeholders/Page";
 import NotFound from "@pages/404";
-import { Suspense, lazy } from "react";
+import Home from "@pages/Home";
 import { Switch, Route } from "wouter";
 
-const Home = lazy(() => import("../../pages/Home"));
 const Search = lazy(() => import("../../pages/Search"));
 const Detail = lazy(() => import("../../pages/Detail"));
 

@@ -1,13 +1,7 @@
 import useTrendingSearches from "@hooks/useTrendingSearches";
 import { Link } from "wouter";
-import { Lines } from "./shared";
-
-// TODO: Use the hook useTrending and handle erros and this file
-
 function TrendingTerms() {
-  const { terms, loading, error } = useTrendingSearches();
-
-  if (loading) return <Lines />;
+  const { terms, error } = useTrendingSearches();
 
   return (
     <section className="Home__searches">

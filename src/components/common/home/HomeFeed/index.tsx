@@ -1,6 +1,6 @@
-import { Form, Logo } from "@components/shared";
-
-import TrendingTerms from "@components/TrendingTerms";
+import { Suspense, lazy } from "react";
+import { Form, Lines, Logo } from "@components/shared";
+const TrendingTerms = lazy(() => import("@components/TrendingTerms"));
 import "./index.css";
 
 function HomeFeed() {
@@ -9,7 +9,9 @@ function HomeFeed() {
       <Logo size="small" />
       <p className="Home__subtitle gradient-purple">Explore a world of gifs</p>
       <Form />
-      <TrendingTerms />
+      <Suspense fallback={<Lines />}>
+        <TrendingTerms />
+      </Suspense>
     </section>
   );
 }
