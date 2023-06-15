@@ -1,4 +1,5 @@
 import { HomeFeed, Categories } from "@components/common";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 function Home() {
   return (
@@ -6,9 +7,11 @@ function Home() {
       <div className="section">
         <HomeFeed />
       </div>
-      <div className="section">
-        <Categories />
-      </div>
+      <LazyLoadComponent useIntersectionObserver>
+        <div className="section">
+          <Categories />
+        </div>
+      </LazyLoadComponent>
     </>
   );
 }
