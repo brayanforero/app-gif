@@ -1,0 +1,14 @@
+.Category {
+  height: auto;
+}
+
+.Category img {
+  aspect-ratio: 1.2/1;
+  box-shadow: var(--shadow);
+  background-color: currentColor;
+}
+
+.Category__name {
+  margin-top: 0;
+  color: var(--primary-color);
+}
