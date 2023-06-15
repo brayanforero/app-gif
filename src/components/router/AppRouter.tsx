@@ -3,9 +3,9 @@ import NotFound from "@pages/404";
 import { Suspense, lazy } from "react";
 import { Switch, Route } from "wouter";
 
-const Home = lazy(() => import("./../../../pages/Home"));
-const Search = lazy(() => import("./../../../pages/Search"));
-const Detail = lazy(() => import("./../../../pages/Detail"));
+const Home = lazy(() => import("../../pages/Home"));
+const Search = lazy(() => import("../../pages/Search"));
+const Detail = lazy(() => import("../../pages/Detail"));
 
 function AppRouter() {
   return (
