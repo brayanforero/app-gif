@@ -1,5 +1,5 @@
-import { API_KEY, API_URL } from '../config'
-import { GifsResponse } from '../interfaces/response/gifs'
+import { API_URL, API_KEY } from "@config/index";
+import { GifsResponse } from "@/interfaces/giphy/gifs";
 
 export const getGifByKeyword = (
   keyword: string,
@@ -11,12 +11,12 @@ export const getGifByKeyword = (
       offset * limit
     }&limit=${limit}`
   )
-    .then(respose => respose.json())
-    .then(data => data)
-}
+    .then((respose) => respose.json())
+    .then((data) => data);
+};
 
 export const getGifByID = (id: string): Promise<GifsResponse> => {
   return fetch(`${API_URL}gifs?api_key=${API_KEY}&ids=${id}`)
-    .then(respose => respose.json())
-    .then(data => data)
-}
+    .then((respose) => respose.json())
+    .then((data) => data);
+};
