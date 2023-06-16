@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Form, Lines, Logo } from "@components/shared";
-const TrendingTerms = lazy(() => import("@components/TrendingTerms"));
+const TrendingTerms = lazy(() => import("./TrendingTerms"));
 import "./index.css";
 
 function HomeFeed() {
