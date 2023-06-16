@@ -1,25 +1,14 @@
+import TermsList from "./TermsList";
 import useTrendingSearches from "@hooks/useTrendingSearches";
-import { Link } from "wouter";
 function TrendingTerms() {
   const { terms, error } = useTrendingSearches();
 
+  if (error) return <span className="alert">{error}</span>;
+
   return (
     <section className="Home__searches">
-      {!error && <TermsList terms={terms} />}
-      {error && <span className="alert">{error}</span>}
+      <TermsList terms={terms} />
     </section>
-  );
-}
-
-function TermsList({ terms }: { terms: string[] }) {
-  return (
-    <>
-      {terms.map((t) => (
-        <Link key={t} href={`/search/${t}`} className="active">
-          {t}
-        </Link>
-      ))}
-    </>
   );
 }
 
