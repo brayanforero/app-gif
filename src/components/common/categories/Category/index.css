@@ -6,9 +6,11 @@
   aspect-ratio: 1.2/1;
   box-shadow: var(--shadow);
   background-color: currentColor;
+  border-radius: var(--radius);
 }
 
 .Category__name {
   margin-top: 0;
   color: var(--primary-color);
+  text-transform: capitalize;
 }
