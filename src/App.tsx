@@ -2,13 +2,16 @@ import { AppRouter } from "@components/router";
 import { Container } from "@components/layouts";
 
 import "./App.css";
+import ScrollReset from "@components/shared/ScrollReset";
 function App() {
   return (
-    <main>
-      <Container>
-        <AppRouter />
-      </Container>
-    </main>
+    <ScrollReset>
+      <main>
+        <Container>
+          <AppRouter />
+        </Container>
+      </main>
+    </ScrollReset>
   );
 }
 

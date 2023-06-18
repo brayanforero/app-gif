@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import debounce from "just-debounce-it";
 import { Link } from "wouter";
 import { useGifs } from "./../../hooks";
@@ -13,9 +13,6 @@ interface Props {
 function Search({ params }: Props) {
   const { gifs, loading, page, pages, setPage } = useGifs(params.keyword);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const handlerNextPage = useCallback(
     debounce(() => setPage((prev) => prev + 1), 800),
     []
