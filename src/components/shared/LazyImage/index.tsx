@@ -13,18 +13,19 @@ interface Props extends LazyImageCustomProp {
 
 function LazyImage({ src, alt, width, height, caption }: Props) {
   return (
-    <div className="LazyImage">
+    <>
       <LazyLoadImage
         width={width}
         height={height}
         src={src}
         alt={alt}
-        decoding="async"
         useIntersectionObserver
+        threshold={10}
+        wrapperClassName="LazyImage"
         effect="blur"
       />
       {caption && <span>{caption}</span>}
-    </div>
+    </>
   );
 }
 

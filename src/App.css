@@ -41,6 +41,11 @@
   justify-items: center;
 }
 
+.LazyImage {
+  background-color: var(--body--color-alt);
+  border-radius: var(--radius);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
