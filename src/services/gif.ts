@@ -7,9 +7,9 @@ export const getGifByKeyword = (
   limit: number = 10
 ): Promise<GifsResponse | null> => {
   return fetch(
-    `${API_URL}gifs/search?api_key=${API_KEY}&q=${keyword}&offset=${
+    `${API_URL}gifs/search?q=${keyword}&offset=${
       offset * limit
-    }&limit=${limit}`
+    }&limit=${limit}&api_key=${API_KEY}`
   )
     .then((respose) => respose.json())
     .then((data) => data);
