@@ -1,9 +1,9 @@
 import { memo } from "react";
-import GifModel from "../interfaces/app/gif";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import "./Gif.css";
 import { Link } from "wouter";
-import { LazyImage } from "./shared";
+import GifModel from "@/interfaces/app/gif";
+import { LazyImage } from "@components/shared";
+import "./Gif.css";
+
 interface Props {
   data: GifModel;
   type?: "hd" | "normal";

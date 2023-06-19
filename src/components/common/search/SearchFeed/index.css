@@ -1,5 +1,5 @@
-.Search {
-  padding: 3em 1em;
+.SearchFeed {
+  padding-top: calc(7.5rem + 2em);
   display: flex;
   flex-direction: column;
 }

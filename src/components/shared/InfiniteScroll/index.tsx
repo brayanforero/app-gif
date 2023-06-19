@@ -46,15 +46,7 @@ function InfiniteScroll({
   return (
     <div className="InfiniteScroll">
       {children}
-      <div
-        className={`${
-          isLoading
-            ? "InfiniteScroll__loader"
-            : "InfiniteScroll__loader is--hide"
-        }`}
-      >
-        {loader}
-      </div>
+      {isLoading && loader}
       <span ref={elementRef} className="InfiniteScroll__ref"></span>
     </div>
   );

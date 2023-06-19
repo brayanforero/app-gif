@@ -2,6 +2,8 @@ export { default as Form } from "./Form";
 export { default as InfiniteScroll } from "./InfiniteScroll";
 export { default as LazyImage } from "./LazyImage";
 export { default as Logo } from "./Logo";
+export { default as ScrollReset } from "./ScrollReset";
+export { default as SearchBar } from "./SearchBar";
 export { default as Card } from "./placeholders/Card";
 export { default as FakeGrid } from "./placeholders/FakeGrid";
 export { default as Lines } from "./placeholders/Lines";
