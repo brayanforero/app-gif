@@ -1,0 +1,41 @@
+.SearchBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 7.5rem;
+  overflow: hidden;
+}
+
+.SearchBar .Logo {
+  width: 6rem;
+  height: 6rem;
+  flex-grow: 0;
+}
+
+.SearchBar .container {
+  height: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+}
+
+.SearchBar .form {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 1em;
+  flex-grow: 1;
+  margin-inline: auto;
+}
+
+.SearchBar .form__input {
+  flex-grow: 1;
+  box-shadow: none;
+}
+.SearchBar .form__input,
+.SearchBar .form__submit {
+  box-shadow: none;
+}
