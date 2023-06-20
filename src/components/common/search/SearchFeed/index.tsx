@@ -12,7 +12,7 @@ interface Props {
 
 function SearchFeed({ keyword = "" }: Props) {
   const keyDecoded = decodeURI(keyword);
-  const { gifs, pages, page, loading, setPage } = useGifs(keyDecoded);
+  const { gifs, pages, page, loading, error, setPage } = useGifs(keyDecoded);
 
   const handleNextPage = useCallback(
     debounce(() => {
@@ -21,18 +21,24 @@ function SearchFeed({ keyword = "" }: Props) {
     [keyDecoded]
   );
 
+  if (error) return;
+
   return (
     <section className="SearchFeed">
       <h2>Your result: {keyDecoded}</h2>
-      <InfiniteScroll
-        dataLength={gifs.length}
-        hasMore={page < pages}
-        isLoading={loading}
-        handlerEndSection={handleNextPage}
-        loader={<BallTriangle color="#5747eb" height={80} width={80} />}
-      >
-        <Grid items={gifs} />
-      </InfiniteScroll>
+      {error ? (
+        <div className="alert">Something has been wrong</div>
+      ) : (
+        <InfiniteScroll
+          dataLength={gifs.length}
+          hasMore={page < pages}
+          isLoading={loading}
+          handlerEndSection={handleNextPage}
+          loader={<BallTriangle color="#5747eb" height={80} width={80} />}
+        >
+          <Grid items={gifs} />
+        </InfiniteScroll>
+      )}
     </section>
   );
 }

@@ -19,8 +19,8 @@ function LazyImage({ src, alt, width, height, caption }: Props) {
         height={height}
         src={src}
         alt={alt}
-        useIntersectionObserver
         wrapperClassName="LazyImage"
+        decoding="async"
         effect="blur"
       />
       {caption && <span>{caption}</span>}

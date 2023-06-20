@@ -18,7 +18,7 @@ function InfiniteScroll({
   loader = <h5>Loading...</h5>,
   isLoading,
   handlerEndSection,
-  threshold = 10,
+  threshold = 50,
   children,
 }: Props) {
   const [prevData, setPrevData] = useState(dataLength);
