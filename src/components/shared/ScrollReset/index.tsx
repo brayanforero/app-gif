@@ -1,14 +1,14 @@
-import { PropsWithChildren, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "wouter";
 
-function ScrollReset({ children }: PropsWithChildren) {
+function ScrollReset() {
   const [location] = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  return children;
+  return null;
 }
 
 export default ScrollReset;
