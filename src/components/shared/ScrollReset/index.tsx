@@ -3,15 +3,14 @@ import { useLocation, useRouter } from "wouter";
 
 function ScrollReset({ children }: PropsWithChildren) {
   const [location] = useLocation();
-  const rootRef = useRef<HTMLDivElement | null>(null);
-
+  const renderRef = useRef<number>(1);
   useEffect(() => {
-    rootRef.current = document.querySelector("#root");
-  }, []);
+    if (renderRef.current === 1) {
+      renderRef.current = 2;
+      return;
+    }
 
-  useEffect(() => {
-    if (rootRef.current == null) return;
-    rootRef.current.scroll(0, 0);
+    window.scrollTo(0, 0);
   }, [location]);
 
   return children;
