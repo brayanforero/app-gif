@@ -20,7 +20,6 @@ function LazyImage({ src, alt, width, height, caption }: Props) {
         src={src}
         alt={alt}
         useIntersectionObserver
-        threshold={10}
         wrapperClassName="LazyImage"
         effect="blur"
       />

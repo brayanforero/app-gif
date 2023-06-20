@@ -4,6 +4,7 @@ import Grid from "@components/common/gif/Grid";
 import useGifs from "@hooks/useGifs";
 import debounce from "just-debounce-it";
 import "./index.css";
+import { BallTriangle } from "react-loader-spinner";
 
 interface Props {
   keyword?: string;
@@ -16,7 +17,7 @@ function SearchFeed({ keyword = "" }: Props) {
   const handleNextPage = useCallback(
     debounce(() => {
       setPage((prev) => prev + 1);
-    }, 800),
+    }, 600),
     [keyDecoded]
   );
 
@@ -28,19 +29,11 @@ function SearchFeed({ keyword = "" }: Props) {
         hasMore={page < pages}
         isLoading={loading}
         handlerEndSection={handleNextPage}
-        loader={<FakeGrid items={3} />}
+        loader={<BallTriangle color="#5747eb" height={80} width={80} />}
       >
         <Grid items={gifs} />
       </InfiniteScroll>
     </section>
-  );
-}
-
-function Loader() {
-  return (
-    <div className="SearchFeed">
-      <FakeGrid items={6} />
-    </div>
   );
 }
 
