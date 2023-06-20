@@ -1,5 +1,5 @@
 .SearchFeed {
-  padding-top: calc(7.5rem + 2em);
+  padding-top: calc(7.5rem + 4em);
   display: flex;
   flex-direction: column;
 }
@@ -20,4 +20,12 @@
 
 .Search__show-result span {
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .SearchFeed {
+    padding-top: calc(7.5rem + 2em);
+    display: flex;
+    flex-direction: column;
+  }
 }
