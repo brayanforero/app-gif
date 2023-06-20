@@ -21,13 +21,13 @@
   display: block;
   width: 100%;
   max-width: 40rem;
-  padding: 0.25em 2em;
+  padding: 1em 2em;
   border-radius: var(--radius);
   border: 1px solid;
   color: var(--error-color);
   font-weight: 600;
   text-align: center;
-  font-size: 0.85em;
+  font-size: 0.95em;
 }
 
 .grid {
