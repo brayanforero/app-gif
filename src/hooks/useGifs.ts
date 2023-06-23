@@ -11,11 +11,6 @@ function useGifs(keyword: string) {
   const totalPages = useRef(1);
 
   useEffect(() => {
-    setPage(1);
-    setGifs([]);
-  }, [keyword]);
-
-  useEffect(() => {
     setLoading(true);
     const offset = page === 1 ? 0 : page;
     getGifByKeyword(keyword, offset)
@@ -49,6 +44,7 @@ function useGifs(keyword: string) {
 
   useEffect(() => {
     setPage(1);
+    setGifs([]);
   }, [keyword]);
 
   return {
