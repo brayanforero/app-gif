@@ -1,20 +1,20 @@
-import useSingleGif from '../../hooks/useSingleGif'
-import { BallTriangle } from 'react-loader-spinner'
-import './index.css'
+import useSingleGif from "../../hooks/useSingleGif";
+import { BallTriangle } from "react-loader-spinner";
+import "./index.css";
 
 interface Props {
-  params: { id: string }
+  params: { id: string };
 }
 
 function Detail({ params }: Props) {
-  const { gif, loading, error } = useSingleGif(params.id)
+  const { gif, loading, error } = useSingleGif(params.id);
 
   const handleReturn = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    window.history.back()
-  }
+    e.preventDefault();
+    window.history.back();
+  };
   return (
-    <main className="Detail">
+    <section className="Detail">
       <a href="#" onClick={handleReturn} className="active">
         Regresar
       </a>
@@ -27,8 +27,8 @@ function Detail({ params }: Props) {
           <h2>{gif?.name}</h2>
         </section>
       )}
-    </main>
-  )
+    </section>
+  );
 }
 
-export default Detail
+export default Detail;
