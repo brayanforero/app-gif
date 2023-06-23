@@ -9,6 +9,7 @@ interface Props {
 
 function Search({ params }: Props) {
   const { keyword } = params;
+  localStorage.setItem("last-keyword", keyword);
   return (
     <>
       <SearchBar />

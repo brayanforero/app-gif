@@ -1,17 +1,22 @@
 import useSingleGif from "../../hooks/useSingleGif";
 import { BallTriangle } from "react-loader-spinner";
 import "./index.css";
+import { useRouter } from "wouter";
+import useLocation from "wouter/use-location";
 
 interface Props {
   params: { id: string };
 }
 
 function Detail({ params }: Props) {
+  const [_, setLocation] = useLocation();
   const { gif, loading, error } = useSingleGif(params.id);
 
   const handleReturn = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    window.history.back();
+
+    const keyword = localStorage.getItem("last-keyword");
+    setLocation(`/search/${keyword}`);
   };
   return (
     <section className="Detail">
